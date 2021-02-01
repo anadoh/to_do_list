@@ -1,8 +1,9 @@
 body {
-  margin: 20px;
+  margin: 30px;
   font-family: 'Calligraffitti', cursive;
   background-image: url("../src/background.jpg");
-  background-size: contain;
+  background-size: cover;
+  background-size: 35%;
 }
 
 .card {
@@ -36,11 +37,10 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 20px;
   background-color: rgb(243, 235, 235);
   width: 300px;
-  
 }
 
 input {
