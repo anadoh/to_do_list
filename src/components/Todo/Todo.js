@@ -1,17 +1,18 @@
 import React from "react";
-import TodoItem from "../TodoItem/TodoItem";
+import TodoItem from "components/TodoItem/TodoItem";
+
 class Todo extends React.Component {
   state = {
     elements: [
-      { id: "22222", isCompleted: true, title: "go shop" },
-      { id: "22223", isCompleted: true, title: "feed the dog" },
-      { id: "222422", isCompleted: false, title: "water the plants" },
+      { id: 1, isCompleted: true, title: "go shop" },
+      { id: 2, isCompleted: true, title: "feed the dog" },
+      { id: 3, isCompleted: false, title: "water the plants" },
     ],
     inputValue: "",
   };
 
   markCompleted(id) {
-    const index = this.state.elements.findIndex((x) => x.id == id);
+    const index = this.state.elements.findIndex((x) => x.id === id);
     const newElements = this.state.elements;
     newElements[index].isCompleted = !this.state.elements[index].isCompleted;
     this.setState({ elements: newElements });
@@ -19,7 +20,7 @@ class Todo extends React.Component {
 
   addItem() {
     const item = {
-      id: Math.random(),
+      id: Math.floor(Math.random() * 1000) + 10,
       title: this.state.inputValue,
     };
     const newElements = [item, ...this.state.elements];
@@ -48,7 +49,7 @@ class Todo extends React.Component {
 
     return (
       <div class="main">
-        <h2>To do List</h2>
+        <h2>Todo List</h2>
         <input
           type="text"
           value={this.state.inputValue}
